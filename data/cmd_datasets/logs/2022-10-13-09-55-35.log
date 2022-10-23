@@ -1,0 +1,215 @@
+2022-10-13 09:55:35
+++++++++++++++++++++++++++++++++++++++++CONFIGURATION SUMMARY++++++++++++++++++++++++++++++++++++++++
+ Status:
+     mode                 : train
+ ++++++++++++++++++++++++++++++++++++++++
+ Datasets:
+     datasets         fold: data/cmd_datasets
+     train            file: train.csv
+     validation       file: None
+     vocab             dir: data/cmd_datasets/vocabs
+     delimiter            : b
+     use  pretrained model: True
+     pretrained      model: Bert
+     finetune             : False
+     use    middle   model: True
+     middle          model: bilstm
+     checkpoints       dir: checkpoints_cmd/bert-bilstm-crf
+     log               dir: data/cmd_datasets/logs
+ ++++++++++++++++++++++++++++++++++++++++
+Labeling Scheme:
+     label          scheme: BIO
+     label           level: 2
+     suffixes             : ['sta', 'job', 'tra']
+     measuring     metrics: ['precision', 'recall', 'f1', 'accuracy']
+ ++++++++++++++++++++++++++++++++++++++++
+Model Configuration:
+     embedding         dim: 300
+     max  sequence  length: 300
+     hidden            dim: 200
+     filter           nums: 64
+     idcnn            nums: 2
+     CUDA  VISIBLE  DEVICE: 0
+     seed                 : 42
+ ++++++++++++++++++++++++++++++++++++++++
+ Training Settings:
+     epoch                : 300
+     batch            size: 32
+     dropout              : 0.5
+     learning         rate: 0.001
+     optimizer            : Adam
+     use               gan: False
+     gan            method: fgm
+     checkpoint       name: bert-bilstm-crf
+     max       checkpoints: 4
+     print       per_batch: 20
+     is     early     stop: True
+     patient              : 5
+++++++++++++++++++++++++++++++++++++++++CONFIGURATION SUMMARY END++++++++++++++++++++++++++++++++++++++++
+loading vocab...
+dataManager initialed...
+mode: train
+loading data...
+validating set is not exist, built...
+training set size: 3152, validating set size: 351
+++++++++++++++++++++training starting++++++++++++++++++++
+epoch:1/300
+training batch:    20, loss: 18.68597, precision: 0.900 recall: 0.626 f1: 0.738 accuracy: 0.933 
+training batch:    40, loss: 5.85152, precision: 0.849 recall: 0.760 f1: 0.802 accuracy: 0.982 
+training batch:    60, loss: 4.58208, precision: 0.880 recall: 0.859 f1: 0.869 accuracy: 0.988 
+training batch:    80, loss: 3.19885, precision: 0.859 recall: 0.853 f1: 0.856 accuracy: 0.984 
+start evaluate engines...
+label: sta, precision: 0.964 recall: 0.970 f1: 0.967 
+label: job, precision: 0.840 recall: 0.868 f1: 0.850 
+label: tra, precision: 0.902 recall: 0.945 f1: 0.921 
+time consumption:6.53(min), precision: 0.944 recall: 0.955 f1: 0.949 accuracy: 0.992 
+saved the new best model with f1: 0.949
+epoch:2/300
+training batch:    20, loss: 3.24835, precision: 0.902 recall: 0.932 f1: 0.917 accuracy: 0.985 
+training batch:    40, loss: 1.81214, precision: 0.941 recall: 0.950 f1: 0.946 accuracy: 0.995 
+training batch:    60, loss: 2.12938, precision: 0.956 recall: 0.982 f1: 0.969 accuracy: 0.994 
+training batch:    80, loss: 1.33476, precision: 0.955 recall: 0.933 f1: 0.944 accuracy: 0.994 
+start evaluate engines...
+label: sta, precision: 0.970 recall: 0.974 f1: 0.972 
+label: job, precision: 0.853 recall: 0.917 f1: 0.882 
+label: tra, precision: 0.955 recall: 0.993 f1: 0.972 
+time consumption:6.43(min), precision: 0.965 recall: 0.976 f1: 0.971 accuracy: 0.995 
+saved the new best model with f1: 0.971
+epoch:3/300
+training batch:    20, loss: 0.74834, precision: 0.944 recall: 0.966 f1: 0.955 accuracy: 0.997 
+training batch:    40, loss: 0.60586, precision: 0.981 recall: 0.981 f1: 0.981 accuracy: 0.999 
+training batch:    60, loss: 3.07088, precision: 0.962 recall: 0.970 f1: 0.966 accuracy: 0.991 
+training batch:    80, loss: 2.79706, precision: 0.951 recall: 0.963 f1: 0.957 accuracy: 0.989 
+start evaluate engines...
+label: sta, precision: 0.976 recall: 0.978 f1: 0.977 
+label: job, precision: 0.981 recall: 1.000 f1: 0.990 
+label: tra, precision: 0.910 recall: 0.950 f1: 0.927 
+time consumption:6.43(min), precision: 0.966 recall: 0.971 f1: 0.969 accuracy: 0.993 
+epoch:4/300
+training batch:    20, loss: 2.14842, precision: 0.991 recall: 0.991 f1: 0.991 accuracy: 0.994 
+training batch:    40, loss: 2.25791, precision: 0.951 recall: 0.951 f1: 0.951 accuracy: 0.994 
+training batch:    60, loss: 0.81584, precision: 0.987 recall: 0.987 f1: 0.987 accuracy: 0.999 
+training batch:    80, loss: 2.27055, precision: 0.992 recall: 0.992 f1: 0.992 accuracy: 0.994 
+start evaluate engines...
+label: sta, precision: 0.979 recall: 0.981 f1: 0.980 
+label: job, precision: 0.990 recall: 1.000 f1: 0.995 
+label: tra, precision: 0.948 recall: 0.995 f1: 0.970 
+time consumption:6.43(min), precision: 0.979 recall: 0.987 f1: 0.983 accuracy: 0.995 
+saved the new best model with f1: 0.983
+epoch:5/300
+training batch:    20, loss: 1.65462, precision: 0.946 recall: 0.955 f1: 0.950 accuracy: 0.996 
+training batch:    40, loss: 1.49058, precision: 0.969 recall: 0.990 f1: 0.979 accuracy: 0.996 
+training batch:    60, loss: 1.15707, precision: 0.971 recall: 0.985 f1: 0.978 accuracy: 0.995 
+training batch:    80, loss: 0.40249, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: sta, precision: 0.981 recall: 0.984 f1: 0.982 
+label: job, precision: 0.990 recall: 1.000 f1: 0.995 
+label: tra, precision: 0.958 recall: 0.993 f1: 0.974 
+time consumption:6.43(min), precision: 0.983 recall: 0.988 f1: 0.986 accuracy: 0.996 
+saved the new best model with f1: 0.986
+epoch:6/300
+training batch:    20, loss: 0.25591, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    40, loss: 0.71189, precision: 0.981 recall: 0.994 f1: 0.987 accuracy: 0.997 
+training batch:    60, loss: 0.76890, precision: 0.988 recall: 1.000 f1: 0.994 accuracy: 0.998 
+training batch:    80, loss: 0.35457, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: sta, precision: 0.982 recall: 0.982 f1: 0.982 
+label: job, precision: 0.990 recall: 1.000 f1: 0.995 
+label: tra, precision: 0.951 recall: 0.990 f1: 0.969 
+time consumption:6.43(min), precision: 0.982 recall: 0.987 f1: 0.984 accuracy: 0.997 
+epoch:7/300
+training batch:    20, loss: 0.52134, precision: 0.982 recall: 0.991 f1: 0.987 accuracy: 0.999 
+training batch:    40, loss: 1.30739, precision: 0.955 recall: 0.984 f1: 0.969 accuracy: 0.992 
+training batch:    60, loss: 0.43980, precision: 0.993 recall: 1.000 f1: 0.997 accuracy: 0.998 
+training batch:    80, loss: 1.63647, precision: 0.960 recall: 1.000 f1: 0.980 accuracy: 0.991 
+start evaluate engines...
+label: sta, precision: 0.980 recall: 0.981 f1: 0.980 
+label: job, precision: 0.990 recall: 1.000 f1: 0.995 
+label: tra, precision: 0.951 recall: 0.993 f1: 0.970 
+time consumption:6.43(min), precision: 0.980 recall: 0.986 f1: 0.983 accuracy: 0.996 
+epoch:8/300
+training batch:    20, loss: 0.58026, precision: 0.981 recall: 0.991 f1: 0.986 accuracy: 0.994 
+training batch:    40, loss: 1.19755, precision: 0.981 recall: 0.987 f1: 0.984 accuracy: 0.997 
+training batch:    60, loss: 0.88336, precision: 0.971 recall: 1.000 f1: 0.985 accuracy: 0.996 
+training batch:    80, loss: 0.80833, precision: 0.988 recall: 0.977 f1: 0.983 accuracy: 0.998 
+start evaluate engines...
+label: sta, precision: 0.980 recall: 0.983 f1: 0.981 
+label: job, precision: 0.990 recall: 1.000 f1: 0.995 
+label: tra, precision: 0.961 recall: 0.995 f1: 0.976 
+time consumption:6.43(min), precision: 0.983 recall: 0.988 f1: 0.986 accuracy: 0.997 
+saved the new best model with f1: 0.986
+epoch:9/300
+training batch:    20, loss: 0.80490, precision: 0.993 recall: 1.000 f1: 0.997 accuracy: 0.997 
+training batch:    40, loss: 0.91450, precision: 0.969 recall: 0.984 f1: 0.976 accuracy: 0.994 
+training batch:    60, loss: 0.75974, precision: 0.965 recall: 0.976 f1: 0.970 accuracy: 0.996 
+training batch:    80, loss: 0.46756, precision: 0.978 recall: 0.989 f1: 0.983 accuracy: 0.998 
+start evaluate engines...
+label: sta, precision: 0.982 recall: 0.982 f1: 0.982 
+label: job, precision: 0.990 recall: 1.000 f1: 0.995 
+label: tra, precision: 0.967 recall: 0.995 f1: 0.979 
+time consumption:6.43(min), precision: 0.985 recall: 0.988 f1: 0.987 accuracy: 0.997 
+saved the new best model with f1: 0.987
+epoch:10/300
+training batch:    20, loss: 0.74373, precision: 0.969 recall: 0.979 f1: 0.974 accuracy: 0.996 
+training batch:    40, loss: 0.54364, precision: 0.967 recall: 0.967 f1: 0.967 accuracy: 0.998 
+training batch:    60, loss: 0.09711, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    80, loss: 0.66293, precision: 0.966 recall: 0.988 f1: 0.977 accuracy: 0.993 
+start evaluate engines...
+label: sta, precision: 0.985 recall: 0.985 f1: 0.985 
+label: job, precision: 0.990 recall: 1.000 f1: 0.995 
+label: tra, precision: 0.964 recall: 0.995 f1: 0.978 
+time consumption:6.43(min), precision: 0.987 recall: 0.990 f1: 0.989 accuracy: 0.997 
+saved the new best model with f1: 0.989
+epoch:11/300
+training batch:    20, loss: 0.39353, precision: 0.988 recall: 1.000 f1: 0.994 accuracy: 0.997 
+training batch:    40, loss: 1.18560, precision: 0.960 recall: 0.941 f1: 0.950 accuracy: 0.993 
+training batch:    60, loss: 0.71288, precision: 1.000 recall: 0.983 f1: 0.991 accuracy: 0.996 
+training batch:    80, loss: 0.97044, precision: 0.976 recall: 0.976 f1: 0.976 accuracy: 0.998 
+start evaluate engines...
+label: sta, precision: 0.980 recall: 0.978 f1: 0.979 
+label: job, precision: 0.990 recall: 1.000 f1: 0.995 
+label: tra, precision: 0.967 recall: 0.995 f1: 0.979 
+time consumption:6.43(min), precision: 0.984 recall: 0.985 f1: 0.984 accuracy: 0.996 
+epoch:12/300
+training batch:    20, loss: 0.21121, precision: 0.988 recall: 0.988 f1: 0.988 accuracy: 0.999 
+training batch:    40, loss: 0.37455, precision: 1.000 recall: 0.988 f1: 0.994 accuracy: 0.999 
+training batch:    60, loss: 0.19547, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    80, loss: 0.10707, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: sta, precision: 0.977 recall: 0.976 f1: 0.976 
+label: job, precision: 0.990 recall: 1.000 f1: 0.995 
+label: tra, precision: 0.964 recall: 0.993 f1: 0.977 
+time consumption:6.43(min), precision: 0.981 recall: 0.983 f1: 0.982 accuracy: 0.996 
+epoch:13/300
+training batch:    20, loss: 0.37072, precision: 0.982 recall: 0.982 f1: 0.982 accuracy: 0.998 
+training batch:    40, loss: 0.16651, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    60, loss: 0.34220, precision: 0.992 recall: 1.000 f1: 0.996 accuracy: 0.998 
+training batch:    80, loss: 0.35584, precision: 0.988 recall: 0.988 f1: 0.988 accuracy: 0.997 
+start evaluate engines...
+label: sta, precision: 0.982 recall: 0.983 f1: 0.982 
+label: job, precision: 0.990 recall: 1.000 f1: 0.995 
+label: tra, precision: 0.967 recall: 0.995 f1: 0.979 
+time consumption:6.43(min), precision: 0.986 recall: 0.989 f1: 0.987 accuracy: 0.997 
+epoch:14/300
+training batch:    20, loss: 1.29509, precision: 0.979 recall: 0.968 f1: 0.974 accuracy: 0.991 
+training batch:    40, loss: 0.28507, precision: 0.989 recall: 1.000 f1: 0.994 accuracy: 0.998 
+training batch:    60, loss: 0.40398, precision: 0.992 recall: 1.000 f1: 0.996 accuracy: 0.998 
+training batch:    80, loss: 0.07825, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: sta, precision: 0.977 recall: 0.979 f1: 0.978 
+label: job, precision: 0.990 recall: 0.987 f1: 0.988 
+label: tra, precision: 0.973 recall: 0.973 f1: 0.972 
+time consumption:6.43(min), precision: 0.984 recall: 0.981 f1: 0.982 accuracy: 0.996 
+epoch:15/300
+training batch:    20, loss: 0.23515, precision: 0.990 recall: 1.000 f1: 0.995 accuracy: 0.999 
+training batch:    40, loss: 0.77044, precision: 0.956 recall: 0.964 f1: 0.960 accuracy: 0.995 
+training batch:    60, loss: 0.84632, precision: 0.986 recall: 0.986 f1: 0.986 accuracy: 0.995 
+training batch:    80, loss: 0.12493, precision: 0.991 recall: 0.991 f1: 0.991 accuracy: 0.999 
+start evaluate engines...
+label: sta, precision: 0.976 recall: 0.981 f1: 0.978 
+label: job, precision: 0.990 recall: 0.966 f1: 0.977 
+label: tra, precision: 0.961 recall: 0.995 f1: 0.976 
+time consumption:6.43(min), precision: 0.983 recall: 0.987 f1: 0.985 accuracy: 0.996 
+early stopped, no progress obtained within 5 epochs
+overall best f1 is 0.9885871452850808 at 10 epoch
+total training time consumption: 96.528(min)

@@ -1,0 +1,10 @@
+model_checkpoint_path: "bert-bilstm-crf-13"
+all_model_checkpoint_paths: "bert-bilstm-crf-10"
+all_model_checkpoint_paths: "bert-bilstm-crf-11"
+all_model_checkpoint_paths: "bert-bilstm-crf-12"
+all_model_checkpoint_paths: "bert-bilstm-crf-13"
+all_model_checkpoint_timestamps: 1666442882.4045904
+all_model_checkpoint_timestamps: 1666443085.4472427
+all_model_checkpoint_timestamps: 1666443153.0911381
+all_model_checkpoint_timestamps: 1666443899.5240242
+last_preserved_timestamp: 1665654943.7990508

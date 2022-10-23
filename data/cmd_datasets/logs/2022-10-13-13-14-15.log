@@ -1,0 +1,56 @@
+2022-10-13 13:14:15
+++++++++++++++++++++++++++++++++++++++++CONFIGURATION SUMMARY++++++++++++++++++++++++++++++++++++++++
+ Status:
+     mode                 : interactive_predict
+ ++++++++++++++++++++++++++++++++++++++++
+ Datasets:
+     datasets         fold: data/cmd_datasets
+     train            file: train.csv
+     validation       file: None
+     vocab             dir: data/cmd_datasets/vocabs
+     delimiter            : b
+     use  pretrained model: True
+     pretrained      model: Bert
+     finetune             : False
+     use    middle   model: True
+     middle          model: bilstm
+     checkpoints       dir: checkpoints_cmd/bert-bilstm-crf
+     log               dir: data/cmd_datasets/logs
+ ++++++++++++++++++++++++++++++++++++++++
+Labeling Scheme:
+     label          scheme: BIO
+     label           level: 2
+     suffixes             : ['sta', 'job', 'tra']
+     measuring     metrics: ['precision', 'recall', 'f1', 'accuracy']
+ ++++++++++++++++++++++++++++++++++++++++
+Model Configuration:
+     embedding         dim: 300
+     max  sequence  length: 300
+     hidden            dim: 200
+     filter           nums: 64
+     idcnn            nums: 2
+     CUDA  VISIBLE  DEVICE: 0
+     seed                 : 42
+ ++++++++++++++++++++++++++++++++++++++++
+ Training Settings:
+     epoch                : 300
+     batch            size: 32
+     dropout              : 0.5
+     learning         rate: 0.001
+     optimizer            : Adam
+     use               gan: False
+     gan            method: fgm
+     checkpoint       name: bert-bilstm-crf
+     max       checkpoints: 4
+     print       per_batch: 20
+     is     early     stop: True
+     patient              : 5
+++++++++++++++++++++++++++++++++++++++++CONFIGURATION SUMMARY END++++++++++++++++++++++++++++++++++++++++
+loading vocab...
+dataManager initialed...
+mode: predict_one
+loading model parameter
+loading model successfully
+please input a sentence (enter [exit] to exit.)
+please input a sentence (enter [exit] to exit.)
+please input a sentence (enter [exit] to exit.)
